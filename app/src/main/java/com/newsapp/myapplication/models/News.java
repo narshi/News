@@ -5,7 +5,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class News {
 
@@ -35,7 +34,7 @@ public class News {
         this.totalResults = totalResults;
     }
 
-    public ArrayList<Article> getArticles() {
+    public ArrayList<com.reciproci.myapplication.models.Article> getArticles() {
         return articles;
     }
 

@@ -1,6 +1,8 @@
-package com.reciproci.myapplication.adapters;
+package com.myapplication.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.newsapp.myapplication.ui.DisplayActivity;
 import com.reciproci.myapplication.R;
 import com.reciproci.myapplication.models.Article;
 import com.reciproci.myapplication.models.News;
@@ -42,6 +45,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.CustomView> {
         Glide.with(context)
                 .load(newsList.get(position).getUrlToImage())
                 .into(holder.bannerImage);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(view.getContext(), DisplayActivity.class);
+                intent.putExtra("image_title",newsList.get(position).getTitle());
+                intent.putExtra("image_url",newsList.get(position).getUrlToImage());
+                intent.putExtra("image_desc",newsList.get(position).getDescription());
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
