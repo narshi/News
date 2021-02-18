@@ -1,4 +1,4 @@
-package com.newsapp.myapplication.ui;
+package com.newsapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,8 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.android.material.button.MaterialButton;
-import com.reciproci.myapplication.R;
+import com.newsapp.myapplication.R;
+
 
 public class DisplayActivity extends AppCompatActivity {
 

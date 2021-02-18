@@ -1,4 +1,4 @@
-package com.reciproci.myapplication;
+package com.newsapp.myapplication;
 
 import org.junit.Test;
 

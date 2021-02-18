@@ -1,11 +1,12 @@
-package com.reciproci.myapplication.network;
+package com.newsapp.network;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.reciproci.myapplication.constants.UrlConstants.BASE_URL;
+import static com.newsapp.constants.UrlConstants.BASE_URL;
+
 
 public class RetrofitInstance {
 

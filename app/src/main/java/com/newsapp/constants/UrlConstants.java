@@ -1,4 +1,4 @@
-package com.reciproci.myapplication.constants;
+package com.newsapp.constants;
 
 public class UrlConstants {
     public static final String BASE_URL = "https://newsapi.org/";

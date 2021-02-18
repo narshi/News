@@ -1,5 +1,6 @@
-package com.newsapp.myapplication.ui;
+package com.newsapp.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,13 +15,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.myapplication.adapters.NewsAdapter;
-import com.reciproci.myapplication.R;
 
-import com.reciproci.myapplication.models.Article;
-import com.reciproci.myapplication.models.News;
-import com.reciproci.myapplication.network.ApiClient;
-import com.reciproci.myapplication.network.RetrofitInstance;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.newsapp.adapters.NewsAdapter;
+import com.newsapp.models.Article;
+import com.newsapp.models.News;
+import com.newsapp.myapplication.R;
+import com.newsapp.network.ApiClient;
+import com.newsapp.network.RetrofitInstance;
+import com.newsapp.ui.login.LoginActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -40,15 +44,17 @@ public class NewsActivity extends AppCompatActivity {
     private ApiClient apiClient;
     private ProgressBar progressBar;
     private Toolbar mTopToolbar;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+        mAuth = FirebaseAuth.getInstance();
+        apiClient= RetrofitInstance.getRetrofit().create(ApiClient.class);
         initUi();
-
-        apiClient = RetrofitInstance.getRetrofit().create(ApiClient.class);
         getNews();
+
     }
 
     @Override
@@ -62,7 +68,11 @@ public class NewsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_favorite) {
-            Toast.makeText(NewsActivity.this, "Action clicked", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(NewsActivity.this, "Logged Out Successfully", Toast.LENGTH_LONG).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -111,6 +121,8 @@ public class NewsActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 Log.e(TAG, "onFailure: " + t.getMessage());
             }
+
         });
     }
+
 }

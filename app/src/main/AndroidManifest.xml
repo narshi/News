@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.reciproci.myapplication">
+    package="com.newsapp.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -8,18 +8,21 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.newsapp.myapplication.ui.DisplayActivity"></activity>
-        <activity android:name="com.newsapp.myapplication.ui.SplashScreen">
+        <activity android:name="com.newsapp.ui.login.SignUpActivity"></activity>
+        <activity android:name="com.newsapp.ui.login.LoginActivity" />
+        <activity android:name="com.newsapp.ui.DisplayActivity" />
+        <activity android:name="com.newsapp.ui.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.newsapp.myapplication.ui.NewsActivity" />
+        <activity android:name="com.newsapp.ui.NewsActivity" />
     </application>
 
 </manifest>

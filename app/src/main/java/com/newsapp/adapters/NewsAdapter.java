@@ -1,8 +1,7 @@
-package com.myapplication.adapters;
+package com.newsapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.newsapp.myapplication.ui.DisplayActivity;
-import com.reciproci.myapplication.R;
-import com.reciproci.myapplication.models.Article;
-import com.reciproci.myapplication.models.News;
+
+import com.newsapp.models.Article;
+import com.newsapp.myapplication.R;
+import com.newsapp.ui.DisplayActivity;
 
 import java.util.List;
 

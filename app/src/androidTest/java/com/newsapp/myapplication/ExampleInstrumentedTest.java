@@ -1,4 +1,4 @@
-package com.reciproci.myapplication;
+package com.newsapp.myapplication;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.reciproci.myapplication", appContext.getPackageName());
+        assertEquals("com.newsapp", appContext.getPackageName());
     }
 }

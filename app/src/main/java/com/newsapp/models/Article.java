@@ -1,4 +1,4 @@
-package com.reciproci.myapplication.models;
+package com.newsapp.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

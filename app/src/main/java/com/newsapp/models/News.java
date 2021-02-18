@@ -1,11 +1,7 @@
-package com.reciproci.myapplication.models;
-
-
+package com.newsapp.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 import java.util.ArrayList;
-
 public class News {
 
     @SerializedName("status")
@@ -34,12 +30,13 @@ public class News {
         this.totalResults = totalResults;
     }
 
-    public ArrayList<com.reciproci.myapplication.models.Article> getArticles() {
+    public ArrayList<Article> getArticles() {
         return articles;
     }
 
     public void setArticles(ArrayList<Article> articles) {
         this.articles = articles;
     }
+
 
 }

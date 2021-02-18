@@ -8,7 +8,7 @@
         android:id="@+id/action_favorite"
         android:orderInCategory="300"
         android:title="User"
-        android:icon="@drawable/ic_baseline_save_alt_24"
+        android:icon="@drawable/ic_door_exit"
         app:showAsAction="ifRoom"></item>
 
 </menu>
